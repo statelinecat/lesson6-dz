@@ -84,12 +84,18 @@ zoo_name = input("Введите название зоопарка: ")
 zoo = load_zoo(zoo_name)
 
 print("Список сотрудников зоопарка:")
-for staff in zoo.staff:
-    print(staff.name)
+if len(zoo.staff) < 1:
+    print('Сотрудников пока нет, сейчас наберем;)')
+else:
+    for staff in zoo.staff:
+        print(staff.name)
 
 print("Список питомцев зоопарка:")
-for animal in zoo.animals:
-    print(animal.name)
+if len(zoo.animals) < 1:
+    print('Питомцев пока нет, сейчас будем заселять;)')
+else:
+    for animal in zoo.animals:
+        print(animal.name)
 
 if len(zoo.animals) < 1:
     birds = [Bird("Птица", 1), Bird("Кукушка", 2)]
